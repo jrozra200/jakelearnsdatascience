@@ -1,4 +1,4 @@
-baseurl = "http://jakelearnsdatascience.rbind.io"
+baseurl = "https://jakelearnsdatascience.rbind.io"
 title = "Jake Learns Data Science"
 copyright = "&copy; 2018 Jacob Rozran"
 theme = "hugo-coder"
