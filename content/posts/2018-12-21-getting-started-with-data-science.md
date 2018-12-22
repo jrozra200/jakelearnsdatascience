@@ -8,8 +8,8 @@ tags: [learning, getting started, data science]
 ---
 
 Everyone in the world has a "how to" guide to data science... well, maybe not everyone - 
-but there are a lot out there. I get this question infrequently, so I thought I would do 
-my best to put together what has been my best resources for learning. 
+but there are a lot of "guides" out there. I get this question infrequently, so I thought I would do 
+my best to put together what have been my best resources for learning. 
 
 ### MY STORY
 
@@ -19,7 +19,7 @@ through the [Johns Hopkins University Data Science Specialization on Coursera](h
 python, I got an online introduction via [DataCamp](https://www.datacamp.com/courses/intro-to-python-for-data-science). 
 
 This was all bolstered by working with these tools at work and in side projects. 
-The repetition of working with these tools every day makes it fluent. 
+The repetition of working with these tools every day has made it more fluent. 
 
 Here are some resources that I've used or know of - I've tried to outline them and 
 group them to the best of my ability. There's many more out there, and you may find 
@@ -53,7 +53,7 @@ The classes are interactive, manageable, and self-paced.
 
 * [**Weapons of Math Destruction: How Big Data Increases Inequality and Threatens Democracy** - *Cathy O'Neil*](https://www.amazon.com/Weapons-Math-Destruction-Increases-Inequality/dp/0553418815): Cathy O'Neil 
 does a great job of outlining how data algorithms can have  unintended negative consequences. 
-Powerful read that anyone who builds an machine learning algorithm should read.  
+Anyone who builds an machine learning algorithm should read.  
 * [**The Wall Street Journal Guide to Information Graphics: The Dos and Don'ts of Presenting Data, Facts, and Figures** - *Dona M. Wong*](https://www.amazon.com/Street-Journal-Guide-Information-Graphics/dp/0393347281): 
 I have this book on my desk as a reference. Quick read filled with easy to understand 
 rules and objectives for creating data visualizations. Analyzing data is hard - this 
@@ -88,6 +88,6 @@ like the conference, this podcast covers many relevant data themes.
 
 * [Exponential View](https://www.exponentialview.co/): Billed as a weekly "wondermissive", 
 the author Azeem Azhar covers many topics relevant to data and the greater technology 
-economy.  
+economy. I truly look forward to getting this newsletter every Sunday morning.  
 * Twitter: I follow many great data people on twitter and get a great deal of my 
 data news there.  
