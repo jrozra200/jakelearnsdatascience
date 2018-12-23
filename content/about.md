@@ -3,7 +3,7 @@ title = "About Jake"
 slug = "about"
 +++
 
-I love to learn in general, but mostly I am data fanatic - I love reading, writing, 
+I love to learn in general, but mostly I am a data fanatic - I love reading, writing, 
 and learning about all things data: science, analysis, and visualizations.
 ### BACKGROUND
 
