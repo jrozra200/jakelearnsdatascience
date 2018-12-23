@@ -20,7 +20,7 @@ googleAnalytics = "UA-74033249-1"
 
 [params]
     author = "Jacob Rozran"
-    description = "Jacob Rozran's personal website"
+    description = "Progressing through the wonderful world of Data Science…"
     keywords = "blog,developer,personal,data"
     info = "Data Guy, Dad, Uncle, & Friend"
     avatarurl = "images/jakes_pic.jpg"
@@ -90,7 +90,7 @@ googleAnalytics = "UA-74033249-1"
         [languages.en.params]
         author = "Jacob Rozran"
         info = "Data Guy, Dad, Uncle, & Friend"
-        description = "Jacob Rozran's personal website"
+        description = "Progressing through the wonderful world of Data Science…"
         keywords = "blog,developer,personal,data"
 
         [languages.en.menu] # It is possible to change the menu too.
