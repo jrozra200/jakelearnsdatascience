@@ -1,0 +1,105 @@
+---
+title: Sierpinski Triangles (and Carpets) in R
+author: Jacob Rozran
+date: '2016-10-05'
+slug: sierpinski-triangles-and-carpets-in-r
+categories:
+  - Conferences
+tags:
+  - conferences, data jawn
+---
+
+
+
+<p>Recently in class, I was asked the following question:</p>
+<blockquote>
+<p>Start with an equilateral triangle and a point chosen at random from the interior of that triangle. Label one vertex 1, 2, a second vertex 3, 4, and the last vertex 5, 6. Roll a die to pick a vertex. Place a dot at the point halfway between the roll-selected vertex and the point you chose. Now consider this new dot as a starting point to do this experiment once again. Roll the die to pick a new vertex. Place a dot at the point halfway between the last point and the most recent roll-selected vertex. Continue this procedure. What does the shape of the collection of dots look like?</p>
+</blockquote>
+<p>I thought, well - it’s got to be something cool or else the professor wouldn’t ask, but I can’t imagine it will be more than a cloud of dots. Truth be told, I went to a conference for work the week of this assignment and never did it - but when I went to the next class, <strong>IT WAS SOMETHING COOL!</strong> It turns out that this creates a <a href="https://en.wikipedia.org/wiki/Sierpinski_triangle">Sierpinski triangle</a> - a fractal of increasingly smaller triangles.</p>
+<pre class="r"><code>## CREATE THE TRIANGLE WITH SIDES OF LENGTH a, CREATING n POINTS, AND        ##
+## STARTING POINT AT (startx, starty)                                        ##
+createTriange &lt;- function(a = 10, n = 30000, startx = a / 2, 
+                          starty = sqrt(3) * a / 4){
+        
+        ## ESTABLISH THE CORNERS OF THE TRIANGLE                             ##
+        ## corner1 IS THE FIRST POINT AT THE ORIGIN; corner2 IS THE SECOND   ##
+        ## POINT AT A DISTANCE OF a FROM corner1 AND HALFWAY (ON THE X AXIS) ##
+        ## BETWEEN corner1 AND corner3; corner3 IS ON THE X AXIS A DISTANCE  ##
+        ## OF a FROM corner1 and corner2                                     ##
+        corner1 &lt;- data.frame(x = 0, y = 0) 
+        corner2 &lt;- data.frame(x = a / 2, y = sqrt(3) * a / 2)
+        corner3 &lt;- data.frame(x = a, y = 0) 
+        
+        ## CREATE THE STARTING POINT                                         ##
+        starting_point &lt;- data.frame(x = startx, y = starty)
+        
+        ## ADD THE ESTABLISHED POINTS TO THE all_points DATA FRAME - THESE   ##
+        ## WILL BE PLOTTED WILL ALL OF THE OTHER POINTS THAT ARE CREATED     ##
+        all_points &lt;- data.frame(starting_point)
+        
+        ## LOOP TO CREATE n POINTS                                           ##
+        for(i in 1:n){
+                ## CREATE A RANDOM NUMBER BETWEEN 1 AND 4 (ONE FOR EACH      ##
+                ## CORNER)                                                   ##
+                rand_num &lt;- sample(1:3, 1)
+                
+                ## PICK A CORNER TO GO TOWARDS BASED ON THE RANDOM NUMBER    ##
+                tmp_corn &lt;- if(rand_num == 1){
+                        corner1
+                } else if(rand_num == 2){
+                        corner2
+                } else {
+                        corner3
+                }
+                
+                ## FIND THE DISTANCE THAT IS HALFWAY BETWEEN THE CORNER AND  ##
+                ## POINT WE ARE CURRENTLY AT                                 ##
+                tmp_dist &lt;- sqrt((all_points$x[i] - tmp_corn$x)^2 + (all_points$y[i] - tmp_corn$y)^2) / 2
+                
+                ## FIND THE SLOPE FROM THE CURRENT POINT TO THE CORNER POINT ##
+                tmp_slope &lt;- (all_points$y[i] - tmp_corn$y) / (all_points$x[i] - tmp_corn$x)
+                
+                ## CREATE THE DIVIDEND FOR THE EQUATIONS BELOW               ##
+                tmp_r &lt;- sqrt(1 + (tmp_slope)^2)
+                
+                ## FIND THE NEW VALUE OF X (ADDING OR SUBTRACTING DEPENDING  ##
+                ## ON WHERE THE POINT IS IN REGARDS TO WHERE IT IS GOING)    ##
+                x &lt;- if(all_points$x[i] &lt; tmp_corn$x) {
+                        all_points$x[i] + (tmp_dist / tmp_r)
+                } else if(all_points$x[i] &gt; tmp_corn$x){
+                        all_points$x[i] - (tmp_dist / tmp_r)
+                } else {
+                        all_points$x[i]
+                }
+                
+                ## FIND THE NEW VALUE OF Y (ADDING OR SUBTRACTING DEPENDING  ##
+                ## ON WHERE THE POINT IS IN REGARDS TO WHERE IT IS GOING)    ##
+                y &lt;- if ((all_points$y[i] &gt;= tmp_corn$y) &amp; (all_points$x[i] 
+                                                            &gt;= tmp_corn$x)){
+                        all_points$y[i] - (tmp_dist * tmp_slope / tmp_r)
+                } else if ((all_points$y[i] &gt;= tmp_corn$y) &amp; (all_points$x[i] 
+                                                              &lt; tmp_corn$x)){
+                        all_points$y[i] + (tmp_dist * tmp_slope / tmp_r)
+                } else if ((all_points$y[i] &lt; tmp_corn$y) &amp; (all_points$x[i] 
+                                                             &gt;= tmp_corn$x)){
+                        all_points$y[i] - (tmp_dist * tmp_slope / tmp_r)        
+                } else {
+                        all_points$y[i] + (tmp_dist * tmp_slope / tmp_r)
+                }
+                
+                ## PUT X AND Y TOGETHER IN THE NEW POINT                     ##
+                tmp_point &lt;- c(x, y)
+                
+                ## ADD THE NEW POINT TO THE FRAME OF ALL POINTS              ##
+                all_points &lt;- rbind(all_points, tmp_point)
+        }
+        
+        ## ADD THE CORNERS TO THE LIST OF POINTS TO BE PLOTTED               ##
+        all_points &lt;- rbind(all_points, corner1, corner2, corner3)
+        
+        ## PLOT THE POINTS                                                   ##
+        plot(all_points$x, all_points$y, pch = &quot;.&quot;, xlab = &quot;&quot;, ylab = &quot;&quot;)
+}
+
+createTriange()</code></pre>
+<p><img src="/posts/2016-07-16-sierpinski-triangles-and-carpets-in-r_files/figure-html/sierpinski_triangle-1.png" width="100%" /></p>
