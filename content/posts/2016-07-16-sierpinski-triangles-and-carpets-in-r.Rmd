@@ -4,9 +4,13 @@ author: Jacob Rozran
 date: '2016-10-05'
 slug: sierpinski-triangles-and-carpets-in-r
 categories:
-  - Conferences
+  - Sierpinski Triangles
 tags:
-  - conferences, data jawn
+  - learning
+  - sierpinski triangles
+  - stat theory
+  - R
+  - RStudio
 ---
 
 Recently in class, I was asked the following question:
@@ -19,7 +23,7 @@ I wanted to check this out for myself, so I built an R script that creates the
 triangle. I ran it a few times with differing amounts of points. Here is one 
 with 100,000 points. Though this post is written in RStudio, I've hidden the code 
 for readability. Actual code for this can be found 
-[here](https://github.com/jrozra200/pretty_triangles/blob/master/createTriangle.R)
+[here](https://github.com/jrozra200/pretty_triangles/blob/master/createTriangle.R).
 
 ```{r sierpinski_triangle, warning = FALSE, message = FALSE, out.width = "100%", echo = FALSE}
 ## CREATE THE TRIANGLE WITH SIDES OF LENGTH a, CREATING n POINTS, AND        ##

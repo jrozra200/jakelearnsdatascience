@@ -6,7 +6,8 @@ slug: first-annual-data-jawn
 categories:
   - Conferences
 tags:
-  - conferences, data jawn
+  - conferences
+  - data jawn
 ---
 
 I went to a data event last night called the Data Jawn, presented by RJMetrics, and wanted to share a write up of the event – it was pretty cool and sparked some really good ideas.
