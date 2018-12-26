@@ -1,7 +1,7 @@
 ---
 title: Understanding User Agents
 author: Jacob Rozran
-date: '2016-06-19'
+date: '2015-06-19'
 slug: understanding-user-agents
 categories: [User Agents]
 tags: [learning, user agents]

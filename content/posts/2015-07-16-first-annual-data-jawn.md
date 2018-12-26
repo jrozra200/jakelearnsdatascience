@@ -1,7 +1,7 @@
 ---
 title: First Annual Data Jawn
 author: Jacob Rozran
-date: '2016-07-16'
+date: '2015-07-16'
 slug: first-annual-data-jawn
 categories:
   - Conferences
