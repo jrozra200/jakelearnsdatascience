@@ -25,7 +25,7 @@ tags:
 <h3>STEP 1: GETTING AUTHENTICATED TO TWITTER</h3>
 <p>First, you’ll need to create an application at Twitter. I used <a href="http://thinktostart.com/twitter-authentification-with-r/">this blog post</a> to get rolling with that. This post does a good job walking you through the steps to do that.</p>
 <p>Once you have your app created, this is the code I used to create and save my authentication credentials. Once you’ve done this once, you need only load your credentials in the future to authenticate with Twitter.</p>
-<pre class="r"><code>library(twitteR) ##built in R package that does some of the Twitter API heavy lifting
+<pre class="r"><code>library(twitteR) ## R package that does some of the Twitter API heavy lifting
 
 consumerKey &lt;- &quot;INSERT YOUR KEY HERE&quot;
 consumerSecret &lt;- &quot;INSERT YOUR SECRET HERE&quot;
@@ -50,8 +50,8 @@ save(cred, file=&quot;credentials.RData&quot;)</code></pre>
 load(&quot;credentials.RData&quot;) ##has my secret keys and shiz
 registerTwitterOAuth(twitCred) ##logs me in
 
-##Get the tweets to work with
-tweetList &lt;- searchTwitter(&quot;comcast email&quot;, n = 1000) ##Searches twitter for anything with comcast and email in it
+##Get the tweets about &quot;comcast email&quot; to work with
+tweetList &lt;- searchTwitter(&quot;comcast email&quot;, n = 1000) 
 
 tweetList &lt;- twListToDF(tweetList) ##converts that data we got into a data frame</code></pre>
 <p>As you can see, I used the twitteR R Package to authenticate and search Twitter. After getting the tweets, I converted the results to a Data Frame to make it easier to analyze the results.</p>
@@ -82,7 +82,8 @@ noemail &lt;- grep(&quot;no email&quot;, tweetList$text)
 comcasttweet &lt;- grep(&quot;[Cc]omcast&quot;, tweetList$screenName)
 
 ##finds the rows related to email and customer service
-custserv &lt;- grep(&quot;[Cc]ustomer [Ss]ervice.*email|email.*[Cc]ustomer [Ss]ervice&quot;, tweetList$text)</code></pre>
+custserv &lt;- grep(&quot;[Cc]ustomer [Ss]ervice.*email|email.*[Cc]ustomer [Ss]ervice&quot;, 
+                 tweetList$text)</code></pre>
 <p>After pulling out the duplicates (some tweets may fall into multiple scenarios from above) and ensuring they are in order (as returned initially), I assign the relevant tweets to a new variable with only some of the returned columns.</p>
 <p>The returned columns are:</p>
 <ul>
@@ -111,12 +112,14 @@ custserv &lt;- grep(&quot;[Cc]ustomer [Ss]ervice.*email|email.*[Cc]ustomer [Ss]e
 <li>screenName</li>
 </ul>
 <p>This is handled through this tidbit of code:</p>
-<pre class="r"><code>##combine all of the &quot;good&quot; tweets row numbers that we greped out above and then sorts them and makes sure they are unique
+<pre class="r"><code>##combine all of the &quot;good&quot; tweets row numbers that we greped out above and 
+##then sorts them and makes sure they are unique
 combined &lt;- c(fixemail, comcastemail, noemail, comcasttweet, custserv)
 uvals &lt;- unique(combined)
 sorted &lt;- sort(uvals)
 
-##pull the row numbers that we want, and with the columns that are important to us (tweet text, time of tweet, source, and username)
+##pull the row numbers that we want, and with the columns that are important to 
+##us (tweet text, time of tweet, source, and username)
 paredTweetList &lt;- tweetList[sorted, c(1, 5, 10, 11)]</code></pre>
 </div>
 <div id="step-4-clean-up-the-data-and-return-the-results" class="section level3">

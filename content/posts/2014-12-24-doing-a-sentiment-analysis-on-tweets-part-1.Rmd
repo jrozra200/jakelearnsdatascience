@@ -37,7 +37,7 @@ my authentication credentials. Once you've done this once, you need only load
 your credentials in the future to authenticate with Twitter.
 
 ```{r twitteR_setup, eval = FALSE}
-library(twitteR) ##built in R package that does some of the Twitter API heavy lifting
+library(twitteR) ## R package that does some of the Twitter API heavy lifting
 
 consumerKey <- "INSERT YOUR KEY HERE"
 consumerSecret <- "INSERT YOUR SECRET HERE"
@@ -68,8 +68,8 @@ welcome to see in it's entirety on [GitHub](https://github.com/jrozra200/scrapin
 load("credentials.RData") ##has my secret keys and shiz
 registerTwitterOAuth(twitCred) ##logs me in
 
-##Get the tweets to work with
-tweetList <- searchTwitter("comcast email", n = 1000) ##Searches twitter for anything with comcast and email in it
+##Get the tweets about "comcast email" to work with
+tweetList <- searchTwitter("comcast email", n = 1000) 
 
 tweetList <- twListToDF(tweetList) ##converts that data we got into a data frame
 ```
@@ -113,7 +113,8 @@ noemail <- grep("no email", tweetList$text)
 comcasttweet <- grep("[Cc]omcast", tweetList$screenName)
 
 ##finds the rows related to email and customer service
-custserv <- grep("[Cc]ustomer [Ss]ervice.*email|email.*[Cc]ustomer [Ss]ervice", tweetList$text)
+custserv <- grep("[Cc]ustomer [Ss]ervice.*email|email.*[Cc]ustomer [Ss]ervice", 
+                 tweetList$text)
 ```
 
 After pulling out the duplicates (some tweets may fall into multiple scenarios 
@@ -149,12 +150,14 @@ All I care about are:
 This is handled through this tidbit of code:
 
 ```{r more_cleaning, eval = FALSE}
-##combine all of the "good" tweets row numbers that we greped out above and then sorts them and makes sure they are unique
+##combine all of the "good" tweets row numbers that we greped out above and 
+##then sorts them and makes sure they are unique
 combined <- c(fixemail, comcastemail, noemail, comcasttweet, custserv)
 uvals <- unique(combined)
 sorted <- sort(uvals)
 
-##pull the row numbers that we want, and with the columns that are important to us (tweet text, time of tweet, source, and username)
+##pull the row numbers that we want, and with the columns that are important to 
+##us (tweet text, time of tweet, source, and username)
 paredTweetList <- tweetList[sorted, c(1, 5, 10, 11)]
 ```
 
