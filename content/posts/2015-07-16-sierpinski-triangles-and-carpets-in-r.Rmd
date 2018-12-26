@@ -1,7 +1,7 @@
 ---
 title: Sierpinski Triangles (and Carpets) in R
 author: Jacob Rozran
-date: '2016-10-05'
+date: '2015-10-05'
 slug: sierpinski-triangles-and-carpets-in-r
 categories:
   - Sierpinski Triangles
