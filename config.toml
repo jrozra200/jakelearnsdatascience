@@ -43,29 +43,39 @@ googleAnalytics = "UA-74033249-1"
     custom_css = []
 
 [[params.social]]
+    name = "email"
+    icon = "fas fa-at"
+    weight = 1
+    url = "mailto:jacob.rozran@gmail.com"
+[[params.social]]
     name = "Twitter"
     icon = "fab fa-twitter"
-    weight = 1
+    weight = 2
     url = "https://twitter.com/rozran00/"
 [[params.social]]
     name = "LinkedIn"
     icon = "fab fa-linkedin"
-    weight = 2
+    weight = 3
     url = "https://www.linkedin.com/in/jacob-rozran-884580b/"
 [[params.social]]
     name = "Github"
     icon = "fab fa-github"
-    weight = 3
+    weight = 4
+    url = "https://github.com/jrozra200/"
+[[params.social]]
+    name = "Plotly"
+    icon = "fas fa-chart-bar"
+    weight = 5
     url = "https://github.com/jrozra200/"
 [[params.social]]
     name = "WordPress"
     icon = "fab fa-wordpress"
-    weight = 4
+    weight = 6
     url = "https://jakelearnsdatascience.wordpress.com/"
 [[params.social]]
     name = "flickr"
     icon = "fab fa-flickr"
-    weight = 5
+    weight = 7
     url = "https://www.flickr.com/photos/jakes_project_365/"
 
 [[menu.main]]

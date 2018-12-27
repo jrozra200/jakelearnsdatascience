@@ -2,7 +2,7 @@
 title: Identifying Compromised User Accounts with Logistic Regression
 author: Jacob Rozran
 date: '2015-09-26'
-slug: identifying-compromised-user-accounts-with-logistic-regression
+slug: identifying-compromised-user-accounts
 categories:
   - Data Science
   - Statistics
