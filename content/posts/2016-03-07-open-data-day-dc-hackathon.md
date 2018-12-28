@@ -1,5 +1,5 @@
 ---
-title: OPEN DATA DAY - DC HACKATHON
+title: Open Data Day - DC Hackathon
 author: Jacob Rozran
 date: '2016-03-07'
 slug: open-data-day-dc-hackathon
