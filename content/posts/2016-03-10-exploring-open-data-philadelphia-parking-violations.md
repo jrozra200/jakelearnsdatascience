@@ -129,4 +129,4 @@ I created the above maps in Tableau. I used R to summarize the data. The R
 scripts, raw and processed data, and Tableau workbook can be found in 
 [my github repo](https://github.com/jrozra200/philly_parking_ticket_analysis).
 
-[In the next post, I use weather data and other parameters to predict how many tickets will be written on a daily basis](need_the_link).
+[In the next post, I use weather data and other parameters to predict how many tickets will be written on a daily basis](https://www.jakelearnsdatascience.com/posts/exploring-open-data-predicting-the-amount-of-violations/).
