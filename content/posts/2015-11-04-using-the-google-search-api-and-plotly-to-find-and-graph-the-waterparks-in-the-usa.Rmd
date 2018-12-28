@@ -1,6 +1,5 @@
 ---
-title: Using the Google Search API and Plotly to Find and Graph the Waterparks in
-  the USA
+title: Using the Google Search API and Plotly to Locate Waterparks
 author: Jacob Rozran
 date: '2015-11-04'
 slug: waterparks-with-the-google-search-api-and-plotly
