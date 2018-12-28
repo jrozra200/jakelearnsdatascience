@@ -1,5 +1,5 @@
 ---
-title: EXPLORING OPEN DATA - PHILADELPHIA PARKING VIOLATIONS
+title: Exploring Open Data - Philadelphia Parking Violations
 author: Jacob Rozran
 date: '2016-03-10'
 slug: exploring-open-data-philadelphia-parking-violations

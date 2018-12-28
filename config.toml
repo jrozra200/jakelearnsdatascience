@@ -68,14 +68,9 @@ googleAnalytics = "UA-74033249-1"
     weight = 5
     url = "https://plot.ly/~rozran00#/"
 [[params.social]]
-    name = "WordPress"
-    icon = "fab fa-wordpress"
-    weight = 6
-    url = "https://jakelearnsdatascience.wordpress.com/"
-[[params.social]]
     name = "flickr"
     icon = "fab fa-flickr"
-    weight = 7
+    weight = 6
     url = "https://www.flickr.com/photos/jakes_project_365/"
 
 [[menu.main]]
