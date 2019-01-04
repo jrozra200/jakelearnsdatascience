@@ -81,6 +81,10 @@ googleAnalytics = "UA-74033249-1"
     name = "About"
     weight = 2
     url = "/about/"
+[[menu.main]]
+    name = "Projects"
+    weight = 3
+    url  = "/projects/"
 
 [languages]
     [languages.en]
@@ -105,3 +109,8 @@ googleAnalytics = "UA-74033249-1"
         name = "Blog"
         weight = 2.0
         url = "/posts/"
+        
+        [[languages.en.menu.main]]
+        name = "Projects"
+        weight = 3.0
+        url = "/projects/"
