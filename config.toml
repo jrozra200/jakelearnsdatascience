@@ -18,18 +18,32 @@ disqusShortname = ""
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = "UA-74033249-1"
 
+# Configure BlackFriday Markdown rendering.
+#   See: https://gohugo.io/getting-started/configuration/#configure-blackfriday
+[blackfriday]
+  hrefTargetBlank = true  # `true` opens external links in a new tab.
+  fractions = false  # `false` disables smart fractions (e.g. 5/12 formatted as a fraction).
+  smartypants = false  # `false` disables all smart punctuation substitutions (e.g. smart quotes, dashes, fractions).
+
 [params]
+    # add github edit https://bookdown.org/yihui/blogdown/templates.html
+    GithubEdit = "https://github.com/jrozra200/jakelearnsdatascience/tree/master/content/"
+    GithubSource = "https://github.com/jrozra200/jakelearnsdatascience/tree/master/content/"
+    
     author = "Jacob Rozran"
     description = "Progressing through the wonderful world of Data Science…"
     keywords = "blog,developer,personal,data"
-    info = "Data Guy, Dad, Uncle, & Friend"
+    info = "Data Guy, Dad, & Uncle"
     avatarurl = "images/jakes_pic.jpg"
     footercontent = "It is a capital mistake to theorize before you have all the evidence. - Sherlock Holmes"
 
     dateformat = "January 2, 2006"
 
-    hideCredits = true
-    hideCopyright = true
+    # hideCredits = true
+    # hideCopyright = false
+    
+    # Enable native social sharing buttons?
+    sharing = true
 
     # Git Commit in Footer, uncomment the line below to enable it.
     # commit = "https://github.com/luizdepra/hugo-coder/tree/"
@@ -81,10 +95,12 @@ googleAnalytics = "UA-74033249-1"
     name = "About"
     weight = 2
     url = "/about/"
-[[menu.main]]
-    name = "Projects"
-    weight = 3
-    url  = "/projects/"
+# Link to a PDF of your resume/CV from the menu.
+# To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
+# [[menu.main]]
+#    name = "CV"
+#    url = "files/cv.pdf"
+#    weight = 7
 
 [languages]
     [languages.en]
@@ -94,7 +110,7 @@ googleAnalytics = "UA-74033249-1"
         # You can configure the theme parameter for each language.
         [languages.en.params]
         author = "Jacob Rozran"
-        info = "Data Guy, Dad, Uncle, & Friend"
+        info = "Data Guy, Dad, & Uncle"
         description = "Progressing through the wonderful world of Data Science…"
         keywords = "blog,developer,personal,data"
 
@@ -109,8 +125,3 @@ googleAnalytics = "UA-74033249-1"
         name = "Blog"
         weight = 2.0
         url = "/posts/"
-        
-        [[languages.en.menu.main]]
-        name = "Projects"
-        weight = 3.0
-        url = "/projects/"
