@@ -68,9 +68,8 @@ a D3 viz step-by-step, giving some background on why things work they work and
 showing some great resources.
 
 I am particularly proud of the 
-[results](http://jrozra200.github.io/d3_sample_open_data_day_dc/) (though I only 
-followed his instruction to build this). All of the code to build this can 
-be found here.
+[results](https://www.jakelearnsdatascience.com/projects/d3_sample_open_data_day_dc/) 
+(though I only followed his instruction to build this).
 
 ### Closing
 
